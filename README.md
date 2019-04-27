@@ -1,18 +1,17 @@
 # Tested in Bitbucket
 **GOAL:** 
-> Test in github
-  Find API
-  Test on command-line
-  Test in Jenkins build job
+Test in github
+* Find API
+* Test on command-line
+* Test in Jenkins build job
 
 
 > This particular dev team requires a pull request for all weekly merges from release candidate code-line into develop. Use curl to merge branches (via Jenkins job), but halt at a pull request so the team can review prior to merging, in case conflicts occur or something gets merged accidentally from a previous overlooked issue within the release code-line.
 
 **All one line**
 
-    COMMAND: curl -X POST -H "Content-Type: application/json" -u s3m3n:bbpassword 
-    https://bitbucket.org/api/2.0/repositories/s3m3n/reponame/pullrequests -d 
-    
+    curl -X POST -H "Content-Type: application/json" -u s3m3n:bbpassword 
+    https://bitbucket.org/api/2.0/repositories/s3m3n/reponame/pullrequests -d
     '{ "    title": "Merge some branches", "description": "stackoverflow example", 
     "source": { "branch": { "name": "choose branch to merge with" }, "repository
     ": { "full_name": "s3m3n/reponame" } }, "destination": { "branch": { "name": 
