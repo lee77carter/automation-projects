@@ -10,8 +10,9 @@
 
 **All one line**
 
-    curl -X POST -H "Content-Type: application/json" -u s3m3n:bbpassword 
+    COMMAND: curl -X POST -H "Content-Type: application/json" -u s3m3n:bbpassword 
     https://bitbucket.org/api/2.0/repositories/s3m3n/reponame/pullrequests -d 
+    
     '{ "    title": "Merge some branches", "description": "stackoverflow example", 
     "source": { "branch": { "name": "choose branch to merge with" }, "repository
     ": { "full_name": "s3m3n/reponame" } }, "destination": { "branch": { "name": 
@@ -20,23 +21,19 @@
 
 ## Explanation of the above command
 
-**curl -X POST -H**
-
+    COMMAND: curl -X POST -H
     -X, --request The request method to use.
     -H, --header <header> Headers to supply with request.
 
-curl -X POST -H **"Content-Type:**
-
+    COMMAND: curl -X POST -H **"Content-Type:**
     Sending data via a POST or PUT request, two common formats (specified via the Content-Type header) are:
     application/json
     application/x-www-form-urlencoded
 
-curl -X POST -H "Content-Type: **-u s3m3n:bbpassword https://bitbucket.org/api/2.0/repositories/s3m3n/reponame/pullrequests**
-
+    COMMAND: curl -X POST -H "Content-Type: **-u s3m3n:bbpassword https://bitbucket.org/api/2.0/repositories/s3m3n/reponame/pullrequests
     username & password to API URL for PR's
 
-curl -X POST -H "Content-Type: -u s3m3n:bbpassword https://bitbucket.org/api/2.0/repositories/s3m3n/reponame/pullrequests **-d**
-
+    COMMAND: curl -X POST -H "Content-Type: -u s3m3n:bbpassword https://bitbucket.org/api/2.0/repositories/s3m3n/reponame/pullrequests **-d**
     -d, --data <data> Send specified data in POST request.
     form urlencoded: -d "param1=value1&param2=value2" or -d @data.txt
     json: -d '{"key1":"value1", "key2":"value2"}' or -d @data.json
@@ -68,7 +65,8 @@ curl -X POST -H "Content-Type: -u s3m3n:bbpassword https://bitbucket.org/api/2.0
 
 ## Completed URL 
 
-    curl -X POST -H "Content-Type: application/json" -u s3m3n:bbpassword https://bitbucket.org/api/2.0/repositories/s3m3n/reponame/pullrequests -d '{ "
+    curl -X POST -H "Content-Type: application/json" -u s3m3n:bbpassword 
+    https://bitbucket.org/api/2.0/repositories/s3m3n/reponame/pullrequests -d '{ "
     title": "Merge some branches", "description": "stackoverflow example", "source": { "branch": { "name": "choose branch to merge with" }, "repository
     ": { "full_name": "s3m3n/reponame" } }, "destination": { "branch": { "name": "choose branch that is getting changes" } }, "reviewers": [ { "usernam
     e": "some other user needed to review changes" } ], "close_source_branch": false }'
