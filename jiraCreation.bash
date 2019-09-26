@@ -1,16 +1,17 @@
 #!/usr/bin/bash
 
 # Script used via Jenkins job as an upstream to release candidate builds
-# Set all parameters in Jenkins
+# Set Boolean Parameters in Jenkins
+# Set Choice Parameters in Jenkins (eg.Cherry, Blueberry, Orange..)
 # Set password in Jenkins Credentials
 
 set -e
 echo "III_RLSENG=$JIRAPASSWORD"
 
-## Exceptions to the rule for InnReach
-if [ "${PRODUCT}" = "Lee-Lee" ]; then
-  PRODUCT_RELEASE_BRANCH_NAME="LeeLeeSharing"
-  PRODUCT_TAG="lees"
+## Exceptions to the rule for this product (described differently then the others)
+if [ "${PRODUCT}" = "STRawberry" ]; then
+  PRODUCT_RELEASE_BRANCH_NAME="BerrySharing"
+  PRODUCT_TAG="straw"
 else
   PRODUCT_RELEASE_BRANCH_NAME="${PRODUCT}"
   PRODUCT_TAG="${PRODUCT,,}" ## lower case
